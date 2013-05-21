@@ -1,0 +1,31 @@
+//This hides the component from visibility on your left nav
+<div id="swj_SiteWideJavascript">
+<script type="text/javascript">
+  if (document.getElementById("swj_SiteWideJavascript") != null) {
+    if (document.getElementById("swj_SiteWideJavascript").parentNode.parentNode.className.indexOf("htmlAreaComponentModule") != -1)
+      document.getElementById("swj_SiteWideJavascript").parentNode.parentNode.style.display = 'none';
+  }
+</script>
+
+<SCRIPT type=text/javascript>
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+addLoadEvent(function() {
+    if(window.parent.document.getElementsByName("save_new" )[0]) { 
+        window.parent.document.getElementsByName("save_new" )[0].style.display='none'; 
+        window.parent.document.getElementsByName("save_new" )[1].style.display='none'; 
+    }
+})
+</SCRIPT>
+</div>
